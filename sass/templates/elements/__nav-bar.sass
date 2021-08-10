@@ -1,0 +1,136 @@
+.nav
+    position: fixed
+    left: 0
+    top: 0
+    height: 100%
+    width: 50px
+    background: #323232
+    box-shadow: 15px 0 0 $nav
+    // border-left: 1px solid #323232
+    overflow: hidden
+    transition: all .3s
+    border-radius: 0 10px 10px 0
+    &-ul
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        padding-left: 5px
+        padding-top: 40px
+        padding: 0
+        margin: 0
+        &-li
+            position: relative
+            list-style: none
+            width: 100%
+            border-radius: 20px 0 0 20px
+            &-a
+                position: relative
+                display: block
+                width: 100%
+                height: 60px
+                display: flex
+                text-decoration: none
+                color: #fff
+                transition: .3s all linear
+                font-size: 26px
+                &-icon
+                    position: relative
+                    display: block
+                    min-width: 50px
+                    height: 50px
+                    text-align: center
+                    line-height: 70px
+                    ion-icon
+                        position: relative
+                        font-size: 1em
+                        z-index: 1
+                        transition: .1s all ease
+                        &:hover
+                            transform: scale(1.3)
+                &-link
+                    // line-height: 70px
+                    margin: auto 0
+        &-li.active
+            &:hover
+                background: $nav
+            a:hover::before
+                content: ""
+                position: absolute
+                top: -30px
+                right: 0
+                width: 30px
+                height: 30px
+                background: none
+                border-radius: 50%
+                box-shadow: 15px 15px 0 $nav
+            a:hover::after
+                content: ""
+                position: absolute
+                top: 60px
+                right: 0
+                width: 30px
+                height: 30px
+                background: none
+                border-radius: 50%
+                box-shadow: 15px -15px 0 $nav
+        &-li.no-nav
+            
+            .nav-ul-li-a
+                &-icon
+                    font-size: 32px
+            &:hover
+                background: $no-nav
+                &:hover::before
+                    content: ""
+                    position: absolute
+                    top: -30px
+                    right: 0
+                    width: 30px
+                    height: 30px
+                    background: none
+                    border-radius: 50%
+                    box-shadow: 15px 15px 0 $no-nav
+                &:hover::after
+                    content: ""
+                    position: absolute
+                    top: 60px
+                    right: 0
+                    width: 30px
+                    height: 30px
+                    background: none
+                    border-radius: 50%
+                    box-shadow: 15px -15px 0 $no-nav
+        
+
+.nav.active
+    width: 200px
+.nav.no-nav
+    box-shadow: 15px 0 0 $no-nav
+
+/** NAV PORTABLE **/
+.nav-portable
+    position: fixed
+    right: 0
+    left: 0
+    bottom: 0
+    height: 10%
+    background: #323232
+    border-top: 1px solid #969696
+    z-index: 999
+    ul
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        padding: 0 1em
+        height: 100%
+        align-items: center
+
+        li
+            list-style: none
+            a
+                font-size: 48px
+                line-height: 32px
+                color: white
+
+@import "media/__mediaTemplates.sass"

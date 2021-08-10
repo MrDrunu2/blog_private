@@ -1,0 +1,37 @@
+.container
+    &-content
+        &-category
+            @include tree_d(#838383,#000000,$content)
+            border-radius: 0 2em 2em 0
+            padding: 5em
+            ul
+                li
+                    list-style: none
+                    padding: .5em
+                    width: 100%
+                    @include tree_d(#838383,#000000,$content)
+                    margin-bottom: 1.5em
+                    a
+                        display: flex
+                        justify-content: space-between
+                        margin: 0 0 .5em 0
+                        font-size: 26px
+                        align-items: center
+                        border-bottom: 3px solid #444444
+                        span
+                        ion-icon
+                            font-size: 48px
+                    p
+                        margin-bottom: 1em
+                        border-bottom: 3px solid #444444
+                    span
+                        display: flex
+                        justify-content: flex-end
+                        font-size: 18px
+                        ion-icon
+                        p
+                            line-height: 18px
+                            border-bottom: none
+                            margin-left: 5px
+
+@import "media/__categoryMedia"

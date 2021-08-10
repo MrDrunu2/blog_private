@@ -1,0 +1,25 @@
+body
+    background: $bg
+    color: $color
+    margin: 0
+    padding: 0
+    font-size: 15px
+    font-family: 'Rubik', sans-serif
+    transition: .2s
+
+a
+    color: $color
+    text-decoration: none
+    transition: .1s
+    &:hover
+        color: #dadada
+*
+    padding: 0
+    margin: 0
+
+
+@mixin tree_d($front,$back,$gradient)
+    box-shadow: -3px -3px 5px $back, -4px -4px 5px $front, 3px 3px 15px $back inset, -3px -3px 5px $front inset
+    background: linear-gradient(130deg, $gradient, transparent )
+
+$content-block: linear-gradient(0deg, $content, transparent )

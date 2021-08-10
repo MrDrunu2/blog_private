@@ -1,0 +1,64 @@
+@media screen and ( min-width: 2560px )
+    .container
+        &-content
+            &-news
+                &-card
+                    grid-template: 1fr 1fr / 1fr 1fr
+                    &-grid
+                        img
+                            width: 240px
+                            height: 240px
+                        div
+                            h3
+                                font-size: 42px
+                            p
+                                font-size: 32px
+                        span
+                            font-size: 36px
+                            p
+                                line-height: 36px
+                                margin-left: 5px
+
+// @media screen and ( max-width: 1440px )
+// @media screen and ( max-width: 1280px )
+@media screen and ( max-width: 1024px )
+    .container
+        &-content
+            &-news
+                &-card
+                    grid-template: 1fr 1fr / 1fr
+                    &-grid
+                        span
+                            font-size: 20px
+                            p
+                                line-height: 20px
+                                margin-left: 5px
+// @media screen and ( max-width: 768px )
+// @media screen and ( max-width: 600px )
+@media screen and ( max-width: 480px )
+    .container
+        &-content
+            &-news
+                border-radius: 0
+                &-card
+                    &-grid
+                        display: flex
+                        flex-direction: column
+                        img
+                            display: none
+@media screen and ( max-width: 320px )
+    .container
+        &-content
+            &-news
+                &-card
+                    &-grid
+                        div
+                            h3
+                                font-size: 12px
+                            p
+                                font-size: 14px
+                        span
+                            font-size: 18px
+                            p
+                                line-height: 18px
+    

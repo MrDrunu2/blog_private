@@ -1,0 +1,30 @@
+.container
+    &-content
+        &-article
+            @include tree_d(#838383,#000000,$content)
+            padding: 2em
+            border-radius: 0 2em 2em 0
+            h1
+                font-size: 38px
+                @include tree_d(#838383,#000000,$content)
+                text-align: center
+                padding: .5em
+                border-radius: 2em 0 2em 0
+            img
+                max-width: 640px
+                max-height: 640px
+                object-fit: cover
+                margin: 3em auto
+                margin-top: 5em
+                border-radius: 1em
+                display: block
+                transition: .2s all ease
+                &:hover
+                    transform: scale(1.1)
+                
+            p
+                @include tree_d(#838383,#000000,$content)
+                padding: 2em
+                border-radius: 0 2em 0 2em
+
+@import "media/__articlesMedia"

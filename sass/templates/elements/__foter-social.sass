@@ -1,0 +1,41 @@
+.container
+    &-content
+        &-about
+            &-footer
+                text-align: center
+                align-items: center
+                width: 100%
+                &-social
+                    display: grid
+                    grid-template: auto / auto auto auto auto
+                    grid-gap: 1em
+                    @include tree_d(#838383,#000000,$content)
+                    padding: 1em
+                    &-a
+                        &-vk
+                            color: #2787F5
+                            &:hover
+                                background: #154b88
+                                box-shadow: 0 0 5px #154b88, 0 0 10px #154b88, 0 0 15px #154b88, 0 0 20px #154b88, 0 0 30px #154b88, 0 0 40px #154b88, 0 0 50px #154b88
+                        &-yt
+                            color: #ff0000
+                            &:hover
+                                background: #aa0000
+                                box-shadow: 0 0 5px #aa0000, 0 0 10px #aa0000, 0 0 15px #aa0000, 0 0 20px #aa0000, 0 0 30px #aa0000, 0 0 40px #aa0000, 0 0 50px #aa0000
+                        &-inst
+                            color: #8a3ab9
+                            &:hover
+                                background: #39184d
+                                box-shadow: 0 0 5px #39184d, 0 0 10px #39184d, 0 0 15px #39184d, 0 0 20px #39184d, 0 0 30px #39184d, 0 0 40px #39184d, 0 0 50px #39184d
+                        &-git
+                            color: #000
+                            background: #fff
+                            &:hover
+                                background: #acacac
+                                box-shadow: 0 0 5px #acacac, 0 0 10px #acacac, 0 0 15px #acacac, 0 0 20px #acacac, 0 0 30px #acacac, 0 0 40px #acacac, 0 0 50px #acacac
+                    ion-icon
+                        font-size: 48px
+                        border-radius: 30%
+                        transition: all ease .2s
+                
+    
