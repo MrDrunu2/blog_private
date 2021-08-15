@@ -31,41 +31,28 @@
     <div class="container">
         <div class="container-content">
             <div class="container-content-news">
+
+                <?
+                    $post = mysqli_query($connect, "SELECT * FROM `post`")
+                ?>
+
                 <h2>JS-Новости</h2>
                 <div class="container-content-news-card">
                     <!-- Карточки с новостями -->
-                    <div class="container-content-news-card-grid">
-                        <img src="../data/img/js.png" alt="JS.images">
-                        <div>
-                            <h3><a href="#">Lorem ipsum dolor sit amet.</a></h3>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque cum eum nobis doloribus ea reiciendis, veniam laboriosam atque?</p>
+                    <?
+                        while( $posts = mysqli_fetch_assoc($post)){
+                    ?>
+                        <div class="container-content-news-card-grid">
+                            <img src="../data/img/js.png" alt="JS.images">
+                            <div>
+                                <h3><? echo $posts['title'] ?></a></h3>
+                                <p><? echo $posts['text'] ?></p>
+                            </div>
+                            <span><ion-icon name="eye-sharp"></ion-icon><p><? echo $posts['views'] ?></p></span>
                         </div>
-                        <span><ion-icon name="eye-sharp"></ion-icon><p>25</p></span>
-                    </div>
-                    <div class="container-content-news-card-grid">
-                        <img src="../data/img/js.png" alt="JS.images">
-                        <div>
-                            <h3><a href="#">Lorem ipsum dolor sit amet.</a></h3>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque cum eum nobis doloribus ea reiciendis, veniam laboriosam atque?</p>
-                        </div>
-                        <span><ion-icon name="eye-sharp"></ion-icon><p>25</p></span>
-                    </div>
-                    <div class="container-content-news-card-grid">
-                        <img src="../data/img/js.png" alt="JS.images">
-                        <div>
-                            <h3><a href="#">Lorem ipsum dolor sit amet.</a></h3>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque cum eum nobis doloribus ea reiciendis, veniam laboriosam atque?</p>
-                        </div>
-                        <span><ion-icon name="eye-sharp"></ion-icon><p>25</p></span>
-                    </div>
-                    <div class="container-content-news-card-grid">
-                        <img src="../data/img/js.png" alt="JS.images">
-                        <div>
-                            <h3><a href="#">Lorem ipsum dolor sit amet.</a></h3>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque cum eum nobis doloribus ea reiciendis, veniam laboriosam atque?</p>
-                        </div>
-                        <span><ion-icon name="eye-sharp"></ion-icon><p>25</p></span>
-                    </div>
+                    <?
+                        }
+                    ?>
                     <!-- -------------------- -->
                 </div>
                 <h2>PHP-Известия</h2>
