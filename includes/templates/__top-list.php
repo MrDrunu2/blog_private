@@ -9,25 +9,18 @@
                 <p><strong>Топ статей</strong></p>
                 <ul>
                     <li>
-                        <div class="card">
-                            <span class="card-header"><a href="#">Топ приложений</a></span>
-                            <span class="card-title">Lorem ipsum dolor sit amet.</span>
-                            <span class="card-vievs"><ion-icon name="eye" class="vievs-eye"></ion-icon><p>27</p></span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="card">
-                            <span class="card-header"><a href="#">Топ приложений</a></span>
-                            <span class="card-title">Lorem ipsum dolor sit amet.</span>
-                            <span class="card-vievs"><ion-icon name="eye" class="vievs-eye"></ion-icon><p>27</p></span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="card">
-                            <span class="card-header"><a href="#">Топ приложений</a></span>
-                            <span class="card-title">Lorem ipsum dolor sit amet.</span>
-                            <span class="card-vievs"><ion-icon name="eye" class="vievs-eye"></ion-icon><p>27</p></span>
-                        </div>
+                    <?
+                        $top_post = mysqli_query($connect, "SELECT * FROM `post` ORDER BY `views` DESC LIMIT 3");
+                        while($top_posts = mysqli_fetch_assoc($top_post)){  
+                    ?>
+                            <div class="card">
+                                <span class="card-header"><a href="#"><? echo $top_posts["title"] ?></a></span>
+                                <span class="card-title"><? echo $top_posts["text"] ?></span>
+                                <span class="card-vievs"><ion-icon name="eye" class="vievs-eye"></ion-icon><p><? echo $top_posts["views"] ?></p></span>
+                            </div>
+                    <?
+                        }
+                    ?>
                     </li>
                 </ul>
             </div>
@@ -36,25 +29,17 @@
                 <p><strong>Топ категорий</strong></p>
                 <ul>
                     <li>
-                        <div class="card">
-                            <span class="card-header"><a href="#">Топ приложений</a></span>
-                            <span class="card-title">Lorem ipsum dolor sit amet.</span>
-                            <span class="card-vievs"><ion-icon name="eye" class="vievs-eye"></ion-icon><p>27</p></span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="card">
-                            <span class="card-header"><a href="#">Топ приложений</a></span>
-                            <span class="card-title">Lorem ipsum dolor sit amet.</span>
-                            <span class="card-vievs"><ion-icon name="eye" class="vievs-eye"></ion-icon><p>27</p></span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="card">
-                            <span class="card-header"><a href="#">Топ приложений</a></span>
-                            <span class="card-title">Lorem ipsum dolor sit amet.</span>
-                            <span class="card-vievs"><ion-icon name="eye" class="vievs-eye"></ion-icon><p>27</p></span>
-                        </div>
+                    <?
+                        $top_cat = mysqli_query($connect, "SELECT * FROM `category` ORDER BY `views` DESC LIMIT 3");
+                        while($top_cats = mysqli_fetch_assoc($top_cat)){  
+                    ?>
+                            <div class="card">
+                                <span class="card-header"><a href="#"><? echo $top_cats["cat_name"] ?></a></span>
+                                <span class="card-vievs"><ion-icon name="eye" class="vievs-eye"></ion-icon><p><? echo $top_cats["views"] ?></p></span>
+                            </div>
+                    <?
+                        }
+                    ?>
                     </li>
                 </ul>
             </div>
