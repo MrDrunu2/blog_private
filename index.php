@@ -32,6 +32,13 @@
         <div class="container-content">
             <div class="container-content-news">
                 <?
+                    $res = 0; // Для подсчета блоков в контейнере
+                    $post_q = mysqli_query($connect, "SELECT * FROM `post` ORDER BY `category_id` DESC LIMIT 120");
+                    $post = array();
+                    while($posts = mysqli_fetch_assoc($post_q)){
+                        $post[] = $posts;
+                    }
+
                     $category = mysqli_query($connect, "SELECT * FROM `category`");
 
                     while ($cat = mysqli_fetch_assoc($category)){
@@ -40,27 +47,28 @@
                     <div class="container-content-news-card">
                         <!-- Карточки с новостями -->
                         <?
-                            $table = (count($cat) + 1) * 4;
-                            $post_q = mysqli_query($connect, "SELECT * FROM `post` ORDER BY `id` DESC LIMIT $table");
-                            $post = array();
-                            while($posts = mysqli_fetch_assoc($post_q)){
-                                $post[] = $posts;
-                            }
-                            foreach($post as $posts){ 
+                            foreach($post as $key => $posts){ 
                                 if($posts["category_id"] == $cat["id"]){
+                                    $res += $posts["category_id"] == $cat["id"];
+                                    if($res <= 4){
+                        
                         ?>
-                            <div class="container-content-news-card-grid">
-                                <img src="../data/img/js.png" alt="JS.images">
-                                <div>
-                                    <h3><a href="#"><? echo $posts["title"] ?></a></h3>
-                                    <p><? echo $posts["text"] ?></p>
-                                </div>
-                                <span><ion-icon name="eye-sharp"></ion-icon><p><? echo $posts["views"] ?></p></span>
-                            </div>
-                        <?
+                                    <div class="container-content-news-card-grid">
+                                            <img src="../data/img/js.png" alt="JS.images">
+                                            <div>
+                                                <h3><a href="#"><? echo $posts["title"] ?></a></h3>
+                                                <p><? echo $posts["text"] ?></p>
+                                            </div>
+                                            <span><p><? echo $cat['id'] ?></p><ion-icon name="eye-sharp"></ion-icon><p><? echo $posts["views"] ?></p></span>
+                                        </div>
+                        <?                                        
+                                    }else{
+                                        $res = 0;
+                                        break;
+                                    }
                                 }
                             }
-                        ?>
+                        ?> 
                         <!-- -------------------- -->
                     </div>
                 <? 
