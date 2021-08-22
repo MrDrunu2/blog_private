@@ -7,27 +7,27 @@
             </span>
         </li>
         <li class="nav-ul-li no-nav">
-            <a href="#" class="nav-ul-li-a">
+            <a href="/" class="nav-ul-li-a">
                 <span class="nav-ul-li-a-icon">
-                    <ion-icon name="home-outline"></ion-icon>
+                    <ion-icon name="home-sharp"></ion-icon> 
                 </span>
-                <span class="nav-ul-li-a-link">Home</span>
+                <span class="nav-ul-li-a-link">Главная</span>
+            </a>
+        </li>
+        <li class="nav-ul-li no-nav">
+            <a href="/category.php" class="nav-ul-li-a">
+                <span class="nav-ul-li-a-icon">
+                    <ion-icon name="library-sharp"></ion-icon>
+                </span>
+                <span class="nav-ul-li-a-link">Категории</span>
             </a>
         </li>
         <li class="nav-ul-li no-nav">
             <a href="#" class="nav-ul-li-a">
                 <span class="nav-ul-li-a-icon">
-                    <ion-icon name="people-outline"></ion-icon>
+                    <ion-icon name="person-circle-sharp"></ion-icon>
                 </span>
-                <span class="nav-ul-li-a-link">Frends</span>
-            </a>
-        </li>
-        <li class="nav-ul-li no-nav">
-            <a href="#" class="nav-ul-li-a">
-                <span class="nav-ul-li-a-icon">
-                    <ion-icon name="settings-outline"></ion-icon>
-                </span>
-                <span class="nav-ul-li-a-link">Settings</span>
+                <span class="nav-ul-li-a-link">О себе</span>
             </a>
         </li>
     </ul>

@@ -1,4 +1,4 @@
-<? require "includes/config.php" ?>
+<? require "includes/config.php"; ?>
     
 <!DOCTYPE html>
 <html lang="ru">
@@ -20,7 +20,7 @@
 
     <!-- MENU -->
 
-    <? include_once "includes/templates/__nav-bar.php" ?>
+    <? include_once "includes/templates/__nav-bar.php"; ?>
 
     <!-- ---------------- -->
     <!-- HeaderBG -->
@@ -33,7 +33,7 @@
             <div class="container-content-news">
                 <?
                     $res = 0; // Для подсчета блоков в контейнере
-                    $post_q = mysqli_query($connect, "SELECT * FROM `post` ORDER BY `category_id` DESC LIMIT 120");
+                    $post_q = mysqli_query($connect, "SELECT * FROM `post` ORDER BY `id` DESC LIMIT 120");
                     $post = array();
                     while($posts = mysqli_fetch_assoc($post_q)){
                         $post[] = $posts;
@@ -56,10 +56,10 @@
                                     <div class="container-content-news-card-grid">
                                             <img src="../data/img/js.png" alt="JS.images">
                                             <div>
-                                                <h3><a href="#"><? echo $posts["title"] ?></a></h3>
+                                                <h3><a href="/articles.php?id=<? echo $posts["id"]; ?>"><? echo $posts["title"] ?></a></h3>
                                                 <p><? echo $posts["text"] ?></p>
                                             </div>
-                                            <span><p><? echo $cat['id'] ?></p><ion-icon name="eye-sharp"></ion-icon><p><? echo $posts["views"] ?></p></span>
+                                            <span><ion-icon name="eye-sharp"></ion-icon><p><? echo $posts["views"] ?></p></span>
                                         </div>
                         <?                                        
                                     }else{
@@ -77,7 +77,7 @@
             </div>
             <!-- Top-list -->
 
-            <? include_once "includes/templates/__top-list.php" ?>
+            <? include_once "includes/templates/__top-list.php"; ?>
 
             <!-- ---------- -->
         </div>
