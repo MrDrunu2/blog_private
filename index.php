@@ -31,49 +31,93 @@
     <div class="container">
         <div class="container-content">
             <div class="container-content-news">
-                <?
-                    $res = 0; // Для подсчета блоков в контейнере
-                    $post_q = mysqli_query($connect, "SELECT * FROM `post` ORDER BY `id` DESC LIMIT 120");
-                    $post = array();
-                    while($posts = mysqli_fetch_assoc($post_q)){
-                        $post[] = $posts;
-                    }
-
-                    $category = mysqli_query($connect, "SELECT * FROM `category`");
-
-                    while ($cat = mysqli_fetch_assoc($category)){
-                ?>
-                    <h2><? echo $cat["cat_name"] ?></h2>
-                    <div class="container-content-news-card">
-                        <!-- Карточки с новостями -->
-                        <?
-                            foreach($post as $key => $posts){ 
-                                if($posts["category_id"] == $cat["id"]){
-                                    $res += $posts["category_id"] == $cat["id"];
-                                    if($res <= 4){
-                        
-                        ?>
+                <h2>Новинки</h2>
+                <div class="container-content-news-card">
+                    <?
+                        $category = mysqli_query($connect, 'SELECT * FROM `category`');
+                        $cat = array();
+                        while($cats = mysqli_fetch_assoc($category)){
+                            $cat[] = $cats;
+                        };
+                        $post_q = mysqli_query($connect, 'SELECT * FROM `post` ORDER BY `date` DESC LIMIT 6');
+                        while($post = mysqli_fetch_assoc($post_q)){
+                            foreach($cat as $key => $cats){
+                                if($cats['id'] == $post['category_id']){
+                    ?>
+                    <!-- Карточки с новостями -->
                                     <div class="container-content-news-card-grid">
-                                            <img src="../data/img/js.png" alt="JS.images">
-                                            <div>
-                                                <h3><a href="/articles.php?id=<? echo $posts["id"]; ?>"><? echo $posts["title"] ?></a></h3>
-                                                <p><? echo $posts["text"] ?></p>
-                                            </div>
-                                            <span><ion-icon name="eye-sharp"></ion-icon><p><? echo $posts["views"] ?></p></span>
+                                        <img src="../data/img/js.png" alt="JS.images">
+                                        <div>
+                                            <h3><a href="/articles.php?id=<? echo $post["id"]; ?>"><? echo $post["title"]; ?></a></h3>
+                                            <p><? echo '...'.mb_substr(strip_tags($post["text"]), random_int(0,70),115, 'UTF-8').'...' ?></p>
                                         </div>
-                        <?                                        
-                                    }else{
-                                        $res = 0;
-                                        break;
-                                    }
-                                }
-                            }
-                        ?> 
-                        <!-- -------------------- -->
-                    </div>
-                <? 
-                    }
-                ?>
+                                        <span><ion-icon name="eye-sharp"></ion-icon><p><? echo $post["views"]; ?></p></span>
+                                    </div>
+                    <?          break;
+                                };
+                            };
+                        };
+                    ?>
+                    <!-- -------------------- -->
+                </div>
+                <h2>Новости блога</h2>
+                <div class="container-content-news-card">
+                    <?
+                        $category = mysqli_query($connect, 'SELECT * FROM `category` ');
+                        $cat = array();
+                        while($cats = mysqli_fetch_assoc($category)){
+                            $cat[] = $cats;
+                        };
+                        $post_q = mysqli_query($connect, 'SELECT * FROM `post` WHERE `category_id` = 1 ORDER BY `date` DESC LIMIT 4');
+                        while($post = mysqli_fetch_assoc($post_q)){
+                            foreach($cat as $key => $cats){
+                                if($cats['id'] == $post['category_id']){
+                    ?>
+                    <!-- Карточки с новостями -->
+                                    <div class="container-content-news-card-grid">
+                                        <img src="../data/img/js.png" alt="JS.images">
+                                        <div>
+                                            <h3><a href="/articles.php?id=<? echo $post["id"]; ?>"><? echo $post["title"]; ?></a></h3>
+                                            <p><? echo '...'.mb_substr(strip_tags($post["text"]), random_int(0,70),115, 'UTF-8').'...' ?></p>
+                                        </div>
+                                        <span><ion-icon name="eye-sharp"></ion-icon><p><? echo $post["views"]; ?></p></span>
+                                    </div>
+                    <?          break;
+                                };
+                            };
+                        };
+                    ?>
+                    <!-- -------------------- -->
+                </div>
+                <h2>Технология сайтостроения</h2>
+                <div class="container-content-news-card">
+                    <?
+                        $category = mysqli_query($connect, 'SELECT * FROM `category` ');
+                        $cat = array();
+                        while($cats = mysqli_fetch_assoc($category)){
+                            $cat[] = $cats;
+                        };
+                        $post_q = mysqli_query($connect, 'SELECT * FROM `post` WHERE `category_id` = 4 ORDER BY `date` DESC LIMIT 4');
+                        while($post = mysqli_fetch_assoc($post_q)){
+                            foreach($cat as $key => $cats){
+                                if($cats['id'] == $post['category_id']){
+                    ?>
+                    <!-- Карточки с новостями -->
+                                    <div class="container-content-news-card-grid">
+                                        <img src="../data/img/js.png" alt="JS.images">
+                                        <div>
+                                            <h3><a href="/articles.php?id=<? echo $post["id"]; ?>"><? echo $post["title"]; ?></a></h3>
+                                            <p><? echo '...'.mb_substr(strip_tags($post["text"]), random_int(0,70),115, 'UTF-8').'...' ?></p>
+                                        </div>
+                                        <span><ion-icon name="eye-sharp"></ion-icon><p><? echo $post["views"]; ?></p></span>
+                                    </div>
+                    <?          break;
+                                };
+                            };
+                        };
+                    ?>
+                    <!-- -------------------- -->
+                </div>
             </div>
             <!-- Top-list -->
 

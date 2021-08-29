@@ -1,0 +1,48 @@
+.container
+    &-content
+        &-admin
+            @include tree_d(#838383,#000000,$content)
+            border-radius: 0 2em 2em 0
+            padding-top: 2em
+            &-form
+                h2
+                    text-align: center
+                &-inputs
+                    padding: 2em
+                    display: flex
+                    flex-direction: column
+                    label
+                        font-size: 20px
+                        margin-bottom: 1em
+                        div
+                           background: #444
+                           padding: .3em 
+                           border-radius: .5em
+                        input
+                            margin-left: 1em
+                            background: red
+                            width: 450px
+                            border: none
+                            @include tree_d(#838383,#000000,$content)
+                            padding: .2em 1em
+                            font-size: 28px
+                            color: #fff
+                            outline: none
+                    &-submit
+                        margin: 0 auto
+                        height: 2em
+                        padding: 1em
+                        text-align: centere
+                        display: flex
+                        align-items: center
+                        background: none
+                        outline: none
+                        border: none
+                        @include tree_d(#838383,#000000,$content)
+                        color: #fff
+                        transition: .3s
+                        &:hover
+                            color: #15ff00
+                            transition: 0s
+                        
+                        

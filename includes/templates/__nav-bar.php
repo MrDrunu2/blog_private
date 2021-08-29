@@ -23,7 +23,7 @@
             </a>
         </li>
         <li class="nav-ul-li no-nav">
-            <a href="#" class="nav-ul-li-a">
+            <a href="/about.php" class="nav-ul-li-a">
                 <span class="nav-ul-li-a-icon">
                     <ion-icon name="person-circle-sharp"></ion-icon>
                 </span>
@@ -35,28 +35,18 @@
 <div class="nav-portable">
     <ul>
         <li>
-            <a href="#">
-                <ion-icon name="home-outline"></ion-icon>
+            <a href="/">
+                <ion-icon name="home-sharp"></ion-icon>
             </a>
         </li>
         <li>
-            <a href="#">
-                <ion-icon name="settings-outline"></ion-icon>
+            <a href="/category.php">
+                <ion-icon name="library-sharp"></ion-icon>
             </a>
         </li>
         <li>
-            <a href="#">
-                <ion-icon name="settings-outline"></ion-icon>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <ion-icon name="settings-outline"></ion-icon>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <ion-icon name="settings-outline"></ion-icon>
+            <a href="/about.php">
+                <ion-icon name="person-circle-sharp"></ion-icon>
             </a>
         </li>
     </ul>

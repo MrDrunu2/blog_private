@@ -4,6 +4,8 @@ let nav = document.querySelector('.nav');
 let link = document.querySelectorAll('.nav-ul-li');
 let aboutImgScale = document.querySelectorAll('.container-content-about-photo-img');
 let bgAboutImgScale = document.querySelector('.container-content-about-photo');
+let placeholder = document.querySelector('#placeholder');
+
 
 // ------------------- \\
 
@@ -29,4 +31,12 @@ aboutImgScale.forEach(e => {
 function toggles(e,classes){
     e.classList.toggle(classes)
 }
+
+//placeholder
+placeholder.addEventListener("focus", (e)=>{
+    if(e.isTrusted == true){
+        placeholder.innerText = '';
+    } 
+})
+
 
